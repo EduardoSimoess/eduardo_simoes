@@ -1,4 +1,7 @@
 import { useContext, useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+
 
 export default function Experience() {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -28,18 +31,30 @@ export default function Experience() {
     }
 
     return(
-        <div>
-            <div>
-                <h1>Experiência profissional</h1>
+        <div className="container flex flex-col md:mt-44 text-blue-500">
+            <div className="flex flex-col items-center w-100 text-center p-10">
+                <h1 className="text-4xl font-extrabold">Experiência profissional</h1>
             </div>
-            <div>
+            <div className="flex flex-col gap-4">
                 {experiences.map((experience, index) => (
-                    <div key={index}>
-                        <h3 onClick={() => handleClick(index)}>{experience.title}</h3>
+                    <div className="border-4 rounded-sm border-white items-center p-3" 
+                    key={index}>
+                        <div onClick={() => handleClick(index)}
+                        className="flex flex-row justify-between">
+                            <h3 className="text-lg font-medium" >
+                                {experience.title}
+                            </h3>
+                            <FontAwesomeIcon icon={faChevronDown} />
+                        </div>
                         { activeIndex === index ? 
-                          <div>
+                          <div className="flex flex-col p-3 gap-3 max-w-80 justify-items-center">
                               <p>{experience.text}</p>
-                              {experience.skills.map((skill, index) => <span key={index}>{skill}</span>)}
+                              <div className="flex flex-row gap-3 text-white max-w-30em flex-wrap justify-center">
+                                {experience.skills.map((skill, index) => 
+                                <span className="bg-blue-500 p-2" 
+                                key={index}>{skill}</span>
+                                )}
+                              </div>
                           </div> : ''
                         }
                     </div>
