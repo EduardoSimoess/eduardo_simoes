@@ -31,13 +31,13 @@ export default function Experience() {
     }
 
     return(
-        <div className="container flex flex-col md:mt-44 text-blue-500">
-            <div className="flex flex-col items-center w-100 text-center p-10">
-                <h1 className="text-4xl md:text-6xl font-extrabold">Experiência profissional</h1>
+        <div className="container flex flex-col text-blue-500">
+            <div className="flex flex-col items-center text-center md:p-10 md:pt-0 pb-10">
+                <h1 className="text-5xl md:text-6xl font-extrabold">Experiência profissional</h1>
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 md:px-5">
                 {experiences.map((experience, index) => (
-                    <div className="border-4 rounded-sm border-white items-center p-3" 
+                    <div className="border-4 rounded-sm border-gray-600 items-center p-3" 
                     key={index}>
                         <div onClick={() => handleClick(index)}
                         className="flex flex-row justify-between">
@@ -47,9 +47,9 @@ export default function Experience() {
                             <FontAwesomeIcon icon={faChevronDown} />
                         </div>
                         { activeIndex === index ? 
-                          <div className="flex flex-col p-3 gap-3 w-80 md:w-full md:max-w-100 justify-items-center">
+                          <div className="flex flex-col p-3 gap-3 md:w-full justify-items-center text-gray-600">
                               <p>{experience.text}</p>
-                              <div className="flex flex-row gap-3 text-white md:max-w-100 max-w-30em flex-wrap justify-center">
+                              <div className="flex flex-row gap-3 text-white max-w-30em flex-wrap justify-center">
                                 {experience.skills.map((skill, index) => 
                                 <span className="bg-blue-500 p-2" 
                                 key={index}>{skill}</span>
