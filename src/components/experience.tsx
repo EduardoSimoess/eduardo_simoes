@@ -33,7 +33,7 @@ export default function Experience() {
     return(
         <div className="container flex flex-col md:mt-44 text-blue-500">
             <div className="flex flex-col items-center w-100 text-center p-10">
-                <h1 className="text-4xl font-extrabold">Experiência profissional</h1>
+                <h1 className="text-4xl md:text-6xl font-extrabold">Experiência profissional</h1>
             </div>
             <div className="flex flex-col gap-4">
                 {experiences.map((experience, index) => (
@@ -47,9 +47,9 @@ export default function Experience() {
                             <FontAwesomeIcon icon={faChevronDown} />
                         </div>
                         { activeIndex === index ? 
-                          <div className="flex flex-col p-3 gap-3 max-w-80 justify-items-center">
+                          <div className="flex flex-col p-3 gap-3 w-80 md:w-full md:max-w-100 justify-items-center">
                               <p>{experience.text}</p>
-                              <div className="flex flex-row gap-3 text-white max-w-30em flex-wrap justify-center">
+                              <div className="flex flex-row gap-3 text-white md:max-w-100 max-w-30em flex-wrap justify-center">
                                 {experience.skills.map((skill, index) => 
                                 <span className="bg-blue-500 p-2" 
                                 key={index}>{skill}</span>
