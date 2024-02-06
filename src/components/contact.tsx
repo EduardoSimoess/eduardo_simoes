@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Contact() {
     return (
-        <div>
-            <div className="flex flex-col pl-5 gap-2 items-center md:items-start pt-4 md:pt-0">
+        <div className="flex w-full content-around items-center">
+            <div className="flex w-full flex-col pl-5 gap-2 items-center md:items-start pt-4 md:pt-0">
                 <div className="flex flex-col">
                     <h1 className="text-4xl md:text-6xl text-gray-600">Olá,</h1>
                     <span className="text-4xl md:text-6xl font-extrabold text-blue-500">Posso ajudar?</span>
@@ -19,15 +19,15 @@ export default function Contact() {
                     </button>
                 </div>
             </div>
-{/*             <div className="relative w-64 h-64 overflow-hidden rounded-full">
+            <div className="w-2/3 hidden md:block">
                 <Image 
-                src="/profile.jpeg" 
+                src="/profile.png" 
                 alt="profile_pic" 
-                className="absolute inset-0 w-full h-full object-cover rounded-full" 
-                layout="fill"
-                style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }} 
+                className="w-10/12 h-10/12 object-cover"
+                width="1200"
+                height="1200" 
                 />  
-            </div> */}
+            </div>
         </div>
     )
 }
