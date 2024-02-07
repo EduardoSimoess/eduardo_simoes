@@ -6,7 +6,7 @@ import { FaHtml5, FaCss3, FaDocker } from 'react-icons/fa';
 
 export default function Skills() {
     return (
-        <div className="flex flex-col text-blue-500 gap-5">
+        <div className="flex flex-col text-blue-500 gap-5 text-center">
             <div className="flex flex-col items-center text-center">
                 <h1 className="text-4xl md:text-6xl font-extrabold pb-5">Habilidades</h1>
             </div>

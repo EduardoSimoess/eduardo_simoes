@@ -1,33 +1,43 @@
-import Image from "next/image";
-
+import { FaLinkedin, FaEnvelope, FaPhone, FaGithub } from 'react-icons/fa';
 
 export default function Contact() {
+
+    const handleClick = (link: string) => {
+        window.open(link, '_blank');
+      };
+
     return (
-        <div className="flex w-full content-around items-center">
-            <div className="flex w-full flex-col pl-5 gap-2 items-center md:items-start pt-4 md:pt-0">
-                <div className="flex flex-col">
-                    <h1 className="text-4xl md:text-6xl text-gray-600">Olá,</h1>
-                    <span className="text-4xl md:text-6xl font-extrabold text-blue-500">Posso ajudar?</span>
-                    <span className="text-1xl md:text-2xl">Eduardo Simões - Dev full stack</span>
+        <footer className='flex flex-col justify-center gap-5'>
+            <div className='flex flex-row md:gap-3 justify-center'>
+                <h1 className='text-4xl md:text-6xl text-gray-600 hidden md:block'>Entre em</h1>
+                <span className='text-4xl md:text-6xl font-extrabold text-blue-500'>Contato!</span>
+            </div>
+            <div className="flex md:flex-row flex-col text-blue-500 md:gap-8 justify-center">
+                <div className='flex flex-col gap-1 items-center'>
+                    <FaLinkedin className='h-10 w-10 hover:h-12' 
+                    onClick={() => handleClick('https://www.linkedin.com/in/eduardosimoes97/')}/>
+                    <span className='text-gray-600 font-bold'>Linkedin</span>
+                    <span className='font-extrabold'>/eduardosimoes97</span>
                 </div>
-                <div className="flex flex-col md:flex-row gap-2 md:w-full w-3/5 mt-2 md:mt-0">
-                    <button className="bg-gradient-to-b from-blue-300 to-blue-600 hover:text-gray-600 rounded inline-block text-white font-bold py-2 px-4">
-                        <a href="mailto:eduardorsimoes97@gmail.com">Enviar E-mail</a>
-                    </button> 
-                    <button className="bg-gradient-to-b from-blue-300 to-blue-600 hover:text-gray-600 rounded inline-block text-white font-bold py-2 px-4">
-                        <a href="/resume.pdf" download>Baixar CV</a>
-                    </button>
+                <div className='flex flex-col gap-1 items-center'>
+                    <FaEnvelope className='h-10 w-10 hover:h-12'
+                    onClick={() => handleClick('mailto:eduardorsimoes97@gmail.com')}/>
+                    <span className='text-gray-600 font-bold'>E-mail</span>
+                    <span className='font-extrabold'>eduardorsimoes97@gmail.com</span>
+                </div>
+                <div className='flex flex-col gap-1 items-center'>
+                    <FaPhone className='h-10 w-10 hover:h-12'
+                    onClick={() => handleClick('https://api.whatsapp.com/send?phone=5514991206419')}/>
+                    <span className='text-gray-600 font-bold'>Telefone</span>
+                    <span className='font-extrabold'>(14)99120-6419</span>
+                </div>
+                <div className='flex flex-col gap-1 items-center'>
+                    <FaGithub className='h-10 w-10 hover:h-12' 
+                    onClick={() => handleClick('https://github.com/EduardoSimoess')}/>
+                    <span className='text-gray-600 font-bold'>Github</span>
+                    <span className='font-extrabold'>/EduardoSimoess</span>
                 </div>
             </div>
-            <div className="w-2/3 hidden md:block">
-                <Image 
-                src="/profile.png" 
-                alt="profile_pic" 
-                className="w-10/12 h-10/12 object-cover"
-                width="1200"
-                height="1200" 
-                />  
-            </div>
-        </div>
+        </footer>
     )
 }
